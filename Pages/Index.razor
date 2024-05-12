@@ -1,8 +1,102 @@
 ﻿@page "/"
+@using System.Text;
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Linq;
+@using System.Diagnostics;
+@inject OpenAIService openAIService;
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Learn French </PageTitle>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <textarea placeholder="Verb" class="form-control mt-3 mb-3" rows="1" @bind="selectedVerb"></textarea>
+            <textarea placeholder="Translation" class="form-control mt-3 mb-3" rows="1" @bind="translation"></textarea>
+            <textarea placeholder="Tense" class="form-control mt-3 mb-3" rows="1" @bind="selectedTense"></textarea>
+            <textarea placeholder="Subject" class="form-control mt-3 mb-3" rows="1" @bind="selectedSubject"></textarea>
+            <button class="btn btn-primary btn-lg" @onclick="refresh">Refresh</button>
+        </div>
+    </div>
+    <div class="row">
+        @*         <div class="col-md-6">
+        <textarea placeholder="Enter Prompt" class="form-control mt-3 mb-3" rows="10" @bind="request"></textarea>
+        </div> *@
+        <div class="col-md-2">
+            <textarea class="form-control mt-3 mb-3" rows="2">@response</textarea>
+        </div>
+    </div>
+    <div class="col-mod-3">
+        <button class="btn btn-primary btn-lg" @onclick="sendChatGPT35">Check with AI</button>
+        @*         <button class="btn btn-primary btn-lg" @onclick="sendLlama3">Llama 3</button>
+        *@
+    </div>
+</div>
 
-<h1>Hello, world!</h1>
+@code {
+    public string request = "";
+    public string response = "";
+    public string selectedVerb = "";
+    public string selectedTense = "";
+    public string selectedSubject = "";
+    public string translation = "";
+    public List<Verb> verbs = new();
+    public List<Tense> tenses = new();
+    public List<Subject> subjects = new();
 
-Welcome to your new WEB app.
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        verbs = openAIService.CreateVerbList();
+        tenses = openAIService.CreateTenseList();
+        subjects = openAIService.CreateSubjectList();
+    }
 
+    public void refresh()
+    {
+        var random = new Random();
+        int verbIndex = random.Next(1, 305); // Generates a number between 1
+        int tenseIndex = random.Next(1, 5); // Generates a number between 1
+        int subjectIndex = random.Next(1, 10); // Generates a number between 1
+        Verb verb = new();
+        Tense tense = new();
+        Subject subject = new();
+        verb = verbs.First(item => item.id == verbIndex);
+        tense = tenses.First(item => item.id == tenseIndex);
+        subject = subjects.First(item => item.id == subjectIndex);
+        selectedVerb = verb.Infinitive;
+        translation = verb.EnglishTranslation;
+        selectedTense = tense.Mood;
+        selectedSubject = subject.alias;
+        request = "Conjugate " + selectedVerb + " in the " + subject.person + " form and the " + selectedTense + " Tense. Verbose off";
+        response = "";
+    }
+
+    public async Task sendChatGPT35()
+    {
+        string endpoint = "https://api.openai.com/v1/chat/completions";
+        var messages = new[]
+        {
+        new { role="user", content = request}
+        };
+        var data = new
+        {
+            model = "gpt-3.5-turbo",
+            messages = messages,
+            temperature = 0.3
+        };
+        string jsonString = JsonConvert.SerializeObject(data);
+        var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+        HttpClient client = new HttpClient();
+        client.DefaultRequestHeaders.Add("Authorization", "Bearer " + openAIService.key);
+        var AIresponse = await client.PostAsync(endpoint, content);
+        string responseContent = await AIresponse.Content.ReadAsStringAsync();
+        var jsonResponse = JObject.Parse(responseContent);
+        Debug.Print(jsonResponse.ToString());
+        response = jsonResponse["choices"][0]["message"]["content"].Value<string>();
+        await InvokeAsync(StateHasChanged);
+    }
+
+    public async Task sendLlama3()
+    {
+        await InvokeAsync(StateHasChanged);
+    }
+}

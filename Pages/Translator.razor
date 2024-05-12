@@ -1,0 +1,76 @@
+﻿@page "/Translation"
+@using Microsoft.AspNetCore.Components;
+@using System.Collections.Generic;
+@using System.Threading.Tasks;
+@using System.Diagnostics;
+@inject AzureTranslationService azureTranslationService;
+
+<h2>Translator using Azure Translator Service</h2>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <select class="form-control" @bind="inputLanguage">
+                <option value="">-- Select input language --</option>
+                @foreach (KeyValuePair<string, LanguageDetails> language in LanguageList)
+                {
+                    <option value="@language.Key">@language.Value.Name</option>
+                }
+            </select>
+            <textarea placeholder="Enter text to translate" class="form-control mt-3 mb-3" rows="5" @bind="@inputText"></textarea>
+        </div>
+        <div class="col-md-6">
+            <select class="form-control" @onchange="SelectLanguage">
+                <option value="">-- Select target language --</option>
+                @foreach (KeyValuePair<string, LanguageDetails> lang in LanguageList)
+                {
+                    <option value="@lang.Key">@lang.Value.Name</option>
+                }
+            </select>
+            <textarea class="form-control mt-3 mb-3" rows="5">@outputText</textarea>
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary btn-lg" @onclick="Translate">Translate</button>
+    </div>
+</div>
+
+@code
+{
+    protected string inputLanguage { get; set; } = default;
+    protected string outputLanguage { get; set; } = default;
+    protected string inputText { get; set; } = default;
+    protected string outputText { get; set; } = default;
+    protected Dictionary<string, LanguageDetails> LanguageList = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        AvailableLanguage availableLanguages = await azureTranslationService.getAvailableLanguages();
+        LanguageList = availableLanguages.Translation;
+    }
+
+    protected void SelectLanguage(ChangeEventArgs languageEvent)
+    {
+        outputLanguage = languageEvent.Value.ToString();
+    }
+
+    protected async Task Translate()
+    {
+        if (!string.IsNullOrEmpty(outputLanguage))
+        {
+            TranslationResult[] translations = await azureTranslationService.GetTranslatation(inputText, outputLanguage);
+
+            if (translations is not null)
+            {
+                outputText = translations[0].translations[0].Text;
+                Debug.Print("output text = " + outputText);
+                inputLanguage = translations[0].detectedLanguage.Language;
+            }
+            else
+            {
+                outputText = "An error occurred in translation. Please try again.";
+            }
+        }
+    }
+}
+    

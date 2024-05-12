@@ -1,0 +1,111 @@
+﻿@page "/nouns"
+@using System.Text;
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Linq;
+@using System.Diagnostics;
+@inject OpenAIService openAIService;
+
+<PageTitle>Nouns </PageTitle>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <img class="form-control mt-3 mb-3" src="@imageURL">
+            <textarea placeholder="Noun" class="form-control mt-3 mb-3" rows="1" @bind="selectedNoun"></textarea>
+            <button class="btn btn-primary btn-lg" @onclick="revealFrench">Reveal French</button>
+            <textarea placeholder="Translation" class="form-control mt-3 mb-3" rows="1" @bind="translation"></textarea>
+            <button class="btn btn-primary btn-lg" @onclick="revealGender">Reveal Gender</button>
+            <textarea placeholder="Gender" class="form-control mt-3 mb-3" rows="1" @bind="gender"></textarea>
+             <button class="btn btn-primary btn-lg" @onclick="refresh">Refresh</button>
+        </div>
+    </div>
+@*     <div class="row">
+        <div class="col-md-6">
+            <textarea class="form-control mt-3 mb-3" rows="10" @bind="jsonString"></textarea>
+        </div>
+        <div class="col-md-2">
+            <textarea class="form-control mt-3 mb-3" rows="10" @bind="responseContent"></textarea>
+        </div>
+    </div>
+    <div class="col-mod-3">
+        <button class="btn btn-primary btn-lg" @onclick="sendChatGPT35">Check with AI</button>
+    </div> *@
+</div>
+
+@code {
+    public string request = "";
+    public string selectedNoun = "";
+    public string gender = "";
+    public string translation = "";
+    public string responseContent = "";
+    public string jsonString = "";
+    public List<Noun> nouns = new();
+    public Uri imageURL;
+    public Noun noun = new();
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+
+        //nouns = openAIService.CreateNounList("Nouns.txt");
+    }
+
+    public void refresh()
+    {
+        var random = new Random();
+        int nounIndex = random.Next(1, 1999); // Generates a number between 1
+        noun = openAIService.nouns.First(item => item.id == nounIndex);
+        selectedNoun = noun.english;
+        translation = "";
+        gender = "";
+        request = "an image for the noun " + selectedNoun +".";
+        sendChatGPT35();
+    }
+
+    public void loadNewNoun()
+    {
+        imageURL = openAIService.nextImage;
+        noun = openAIService.nextNoun;
+        selectedNoun = noun.english;
+        var random = new Random();
+        int nounIndex = random.Next(1, 1999); // Generates a number between 1
+        openAIService.nextNoun = openAIService.nouns.First(item => item.id == nounIndex);
+        openAIService.getNextImage("an image for the noun " + openAIService.nextNoun + ".");
+    }
+
+    public void revealFrench()
+    {
+        translation = noun.french;
+    }
+
+    public void revealGender()
+    {
+        gender = noun.gender;
+    }
+
+
+    public async Task sendChatGPT35()
+    {
+        string endpoint = "https://api.openai.com/v1/images/generations";
+        // var messages = new[]
+        // {
+        // new { role="user", content = request}
+        // };
+        var data = new
+        {
+            model = "dall-e-3",
+            prompt = request,
+            n=1,
+            size="1024x1024"
+
+        };
+        jsonString = JsonConvert.SerializeObject(data);
+        var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+        HttpClient client = new HttpClient();
+        client.DefaultRequestHeaders.Add("Authorization", "Bearer " + openAIService.key);
+        var AIresponse = await client.PostAsync(endpoint, content);
+        responseContent = await AIresponse.Content.ReadAsStringAsync();
+        dynamic jsonResponse = JsonConvert.DeserializeObject<dynamic>(responseContent);
+        imageURL = jsonResponse.data[0].url;
+        await InvokeAsync(StateHasChanged);
+    }
+}

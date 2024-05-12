@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp\\WebApp.csproj": {}
+    "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp\\WebApp.csproj": {
+    "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp\\WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp.csproj",
         "projectName": "WebApp",
-        "projectPath": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp\\WebApp.csproj",
+        "projectPath": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp.csproj",
         "packagesPath": "C:\\Users\\Neil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp\\obj\\",
+        "outputPath": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
