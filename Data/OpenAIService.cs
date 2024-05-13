@@ -20,7 +20,7 @@ namespace WebApp
         {
             var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
             key = config["chatGPT35key"];
-            nouns = CreateNounList("Nouns.txt");
+            nouns = CreateNounList("Text_Files\\Nouns.txt");
             var random = new Random();
             int nounIndex = random.Next(1, 1999); // Generates a number between 1
             nextNoun = nouns.First(item => item.id == nounIndex);

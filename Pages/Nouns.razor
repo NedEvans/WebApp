@@ -9,8 +9,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-2">
-            <img class="form-control mt-3 mb-3" src="@imageURL">
-            <textarea placeholder="Noun" class="form-control mt-3 mb-3" rows="1" @bind="selectedNoun"></textarea>
+@*             <img class="form-control mt-3 mb-3" src="@imageURL">
+ *@            <textarea placeholder="Noun" class="form-control mt-3 mb-3" rows="1" @bind="selectedNoun"></textarea>
             <button class="btn btn-primary btn-lg" @onclick="revealFrench">Reveal French</button>
             <textarea placeholder="Translation" class="form-control mt-3 mb-3" rows="1" @bind="translation"></textarea>
             <button class="btn btn-primary btn-lg" @onclick="revealGender">Reveal Gender</button>
@@ -57,8 +57,8 @@
         selectedNoun = noun.english;
         translation = "";
         gender = "";
-        request = "an image for the noun " + selectedNoun +".";
-        sendChatGPT35();
+        // request = "an image for the noun " + selectedNoun +".";
+        // sendChatGPT35();
     }
 
     public void loadNewNoun()

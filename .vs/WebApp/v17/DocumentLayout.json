@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|c:\\users\\neil\\documents\\github\\webapp\\pages\\nouns.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|solutionrelative:pages\\nouns.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|c:\\users\\neil\\documents\\github\\webapp\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|solutionrelative:app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|c:\\users\\neil\\documents\\github\\webapp\\webapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|solutionrelative:webapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|c:\\users\\neil\\documents\\github\\webapp\\data\\openaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +13,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|c:\\users\\neil\\documents\\github\\webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|c:\\users\\neil\\documents\\github\\webapp\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|solutionrelative:pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,69 +22,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 637,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.razor",
-              "DocumentMoniker": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\App.razor",
-              "RelativeDocumentMoniker": "App.razor",
-              "ToolTip": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\App.razor",
-              "RelativeToolTip": "App.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-12T13:38:26.973Z",
+              "DocumentIndex": 0,
+              "Title": "WebApp",
+              "DocumentMoniker": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp.csproj",
+              "RelativeDocumentMoniker": "WebApp.csproj",
+              "ToolTip": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp.csproj",
+              "RelativeToolTip": "WebApp.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-13T12:49:01.991Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "OpenAIService.cs",
               "DocumentMoniker": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\Data\\OpenAIService.cs",
               "RelativeDocumentMoniker": "Data\\OpenAIService.cs",
               "ToolTip": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\Data\\OpenAIService.cs",
               "RelativeToolTip": "Data\\OpenAIService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAdAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwCsAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T12:26:51.951Z",
+              "WhenOpened": "2024-05-13T12:42:36.236Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Nouns.razor",
-              "DocumentMoniker": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\Pages\\Nouns.razor",
-              "RelativeDocumentMoniker": "Pages\\Nouns.razor",
-              "ToolTip": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\Pages\\Nouns.razor",
-              "RelativeToolTip": "Pages\\Nouns.razor",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAswCYAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-12T10:37:17.428Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.razor",
-              "DocumentMoniker": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\Pages\\Index.razor",
-              "RelativeDocumentMoniker": "Pages\\Index.razor",
-              "ToolTip": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\Pages\\Index.razor",
-              "RelativeToolTip": "Pages\\Index.razor",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAcwCcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-12T10:03:55.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-12T06:16:24.369Z",
               "EditorCaption": ""

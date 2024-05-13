@@ -1,0 +1,15 @@
+First Person Singular	I	Je	Moi	Me	Me	Me suis	Le mein	La mienne
+Second Person Singular	You (I)	Tu	Toi	Te	Te	T'es	Le tien	La tienne
+Third Person Singluar	He	Il	Lui	Le	Lui	S'est	Le sien	La sienne
+Third Person Singluar	She	Elle	Elle	La	Lui	S'est	Le sien	La sienne
+Third Person Singluar	One	On	-	-	Lui	S'est	Le sien	La sienne
+First Person Plural	We	Nous	Nous	Nous	Nous	Nous sommes	Le Notre	La Notre
+Second Person Plural	You (F)	Vous	Vous	Vous	Vous	Vous etes	Le Notre	La Notre
+Third Person Plural	They	Ils	Eux	Les	Leur	Se sont	Le leur	La leur
+Third Person Plural	They	Elles	Elles	Les	Leur	Se sont	Le leur	La leur
+Third Person Singluar	He	Mon Pere	Lui	Le	Lui	S'est	Le sien	La sienne
+Third Person Singluar	He	Mon Oncle	Lui	Le	Lui	S'est	Le sien	La sienne
+Third Person Singluar	She	Ma Mere	Elle	La	Lui	S'est	Le sien	La sienne
+Third Person Singluar	She	Ma Tante	Elle	La	Lui	S'est	Le sien	La sienne
+Third Person Singluar	She	Ma Famille	Elle	La	Lui	S'est	Le sien	La sienne
+First Person Plural	We	Mon Pere et Moi	Nous	Nous	Nous	Nous sommes	Le Notre	La Notre
