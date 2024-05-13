@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|c:\\users\\neil\\documents\\github\\webapp\\webapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|solutionrelative:webapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|c:\\users\\neil\\documents\\github\\webapp\\data\\openaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{414D14AD-4AC3-4B64-B50F-EF4EBD3345B7}|WebApp.csproj|solutionrelative:data\\openaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -27,31 +23,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WebApp",
-              "DocumentMoniker": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp.csproj",
-              "RelativeDocumentMoniker": "WebApp.csproj",
-              "ToolTip": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\WebApp.csproj",
-              "RelativeToolTip": "WebApp.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-13T12:49:01.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "OpenAIService.cs",
               "DocumentMoniker": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\Data\\OpenAIService.cs",
               "RelativeDocumentMoniker": "Data\\OpenAIService.cs",
               "ToolTip": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\Data\\OpenAIService.cs",
               "RelativeToolTip": "Data\\OpenAIService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwCsAAABLAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T12:42:36.236Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Neil\\Documents\\Github\\WebApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -59,8 +43,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T06:16:24.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T06:16:24.369Z"
             }
           ]
         }
